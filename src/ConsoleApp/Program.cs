@@ -12,6 +12,7 @@ namespace ConsoleApp
             Console.WriteLine("hello world");
             Console.WriteLine("bye world");
             Console.WriteLine("1.0.2");
+            Console.WriteLine("1.0.2.1");
         }
     }
 }
