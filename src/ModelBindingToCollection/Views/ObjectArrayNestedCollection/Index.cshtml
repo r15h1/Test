@@ -1,0 +1,209 @@
+﻿@model IEnumerable<ModelBindingToCollection.Models.VehicleNestedCollection>
+@{
+    ViewData["Title"] = "Model Binding to Object Collections";
+}
+<hr />
+<form method="post" id="myform">
+    <div class="form-horizontal">
+        <div class="form-group">
+            <label class="col-md-12 label label-primary">Vehicle 1</label>
+        </div>
+        <div class="form-group">
+            <label class="col-md-2 control-label">Make</label>
+            <div class="col-md-10">
+                <input type="text" class="form-control" name="vehicles[0].make" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-md-2 control-label">Model</label>
+            <div class="col-md-10">
+                <input type="text" class="form-control" name="vehicles[0].model" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-md-2 control-label">Year</label>
+            <div class="col-md-10">
+                <input type="number" class="form-control" name="vehicles[0].year" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-md-2 control-label">Safety Feature 1 Name</label>
+            <div class="col-md-10">
+                <input type="text" class="form-control" name="vehicles[0].safetyFeatures[0].Name" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-md-2 control-label">Safety Feature 1 Description</label>
+            <div class="col-md-10">
+                <input type="text" class="form-control" name="vehicles[0].safetyFeatures[0].Description" />
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="col-md-2 control-label">Safety Feature 2 Name</label>
+            <div class="col-md-10">
+                <input type="text" class="form-control" name="vehicles[0].safetyFeatures[1].Name" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-md-2 control-label">Safety Feature 2 Description</label>
+            <div class="col-md-10">
+                <input type="text" class="form-control" name="vehicles[0].safetyFeatures[1].Description" />
+            </div>
+        </div>
+
+
+        <hr />
+        <div class="form-group">
+            <label class="col-md-12 label label-primary">Vehicle 2</label>
+        </div>
+        <div class="form-group">
+            <label class="col-md-2 control-label">Make</label>
+            <div class="col-md-10">
+                <input type="text" class="form-control" name="vehicles[1].make" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-md-2 control-label">Model</label>
+            <div class="col-md-10">
+                <input type="text" class="form-control" name="vehicles[1].model" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-md-2 control-label">Year</label>
+            <div class="col-md-10">
+                <input type="number" class="form-control" name="vehicles[1].year" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-md-2 control-label">Safety Feature 1 Name</label>
+            <div class="col-md-10">
+                <input type="text" class="form-control" name="vehicles[1].safetyFeatures[0].Name" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-md-2 control-label">Safety Feature 1 Description</label>
+            <div class="col-md-10">
+                <input type="text" class="form-control" name="vehicles[1].safetyFeatures[0].Description" />
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="col-md-2 control-label">Safety Feature 2 Name</label>
+            <div class="col-md-10">
+                <input type="text" class="form-control" name="vehicles[1].safetyFeatures[1].Name" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-md-2 control-label">Safety Feature 2 Description</label>
+            <div class="col-md-10">
+                <input type="text" class="form-control" name="vehicles[1].safetyFeatures[1].Description" />
+            </div>
+        </div>
+        
+        <hr />
+        <div class="form-group">
+            <label class="col-md-12 label label-primary">Vehicle 3</label>
+        </div>
+        <div class="form-group">
+            <label class="col-md-2 control-label">Make</label>
+            <div class="col-md-10">
+                <input type="text" class="form-control" name="vehicles[2].make" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-md-2 control-label">Model</label>
+            <div class="col-md-10">
+                <input type="text" class="form-control" name="vehicles[2].model" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-md-2 control-label">Year</label>
+            <div class="col-md-10">
+                <input type="number" class="form-control" name="vehicles[2].year" />
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="col-md-2 control-label">Safety Feature 1 Name</label>
+            <div class="col-md-10">
+                <input type="text" class="form-control" name="vehicles[2].safetyFeatures[0].Name" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-md-2 control-label">Safety Feature 1 Description</label>
+            <div class="col-md-10">
+                <input type="text" class="form-control" name="vehicles[2].safetyFeatures[0].Description" />
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="col-md-2 control-label">Safety Feature 2 Name</label>
+            <div class="col-md-10">
+                <input type="text" class="form-control" name="vehicles[2].safetyFeatures[1].Name" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-md-2 control-label">Safety Feature 2 Description</label>
+            <div class="col-md-10">
+                <input type="text" class="form-control" name="vehicles[2].safetyFeatures[1].Description" />
+            </div>
+        </div>
+
+        <div>
+            <input type="submit" class="pull-right" value="Submit Form" />
+        </div>        
+        <div>
+            <input type="submit" class="pull-right" value="Submit Ajax" id="AjaxSubmit" />
+        </div>
+    </div>
+</form>
+<div>Posted values:</div>
+@if (Model != null && Model.Count() > 0)
+{
+    <div>
+        <ul>
+            @foreach (var vehicle in Model)
+            {
+                <li>
+                    @vehicle.Year @vehicle.Make @vehicle.Model <br />
+                    @if (vehicle.SafetyFeatures != null && vehicle.SafetyFeatures.Count > 0)
+                    {
+                        foreach (var feature in vehicle.SafetyFeatures)
+                        {
+                            <span>feature.Name +"-" + feature.Description</span>
+                        }
+                    }
+                </li>
+            }
+        </ul>
+    </div>
+}
+
+@section scripts{
+    <script>
+        $(document).ready(function () {
+            $("#myform").submit(function (event) {
+                var data = $('form').serialize();
+                $.ajax({
+                    type: 'POST', // define the type of HTTP verb we want to use (POST for our form)
+                    url: 'ObjectArrayNestedCollection/Index', // the url where we want to POST
+                    data: data, // our data object
+                    encode: true
+                });
+                event.preventDefault();
+            });
+        });
+
+        function ConvertFormToJSON(form) {
+            var array = $("#myform").serializeArray();
+            var json = {};
+
+            jQuery.each(array, function () {
+                json[this.name] = this.value || '';
+            });
+
+            return json;
+        }
+    </script>
+}

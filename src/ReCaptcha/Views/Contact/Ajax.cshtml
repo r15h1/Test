@@ -1,0 +1,58 @@
+﻿@model ReCaptcha.Models.ContactModel
+<form method="post" action="/contact/ajax">
+    <div asp-validation-summary="All" class="text-danger"></div>
+    <div class="form-group">
+        <label for="Name">Name</label>
+        <input type="text" class="form-control" asp-for="Name" required maxlength="100">
+    </div>
+    <div class="form-group">
+        <label for="Email">Email</label>
+        <input type="email" class="form-control" asp-for="Email" required maxlength="100">
+    </div>
+    <div class="form-group">
+        <label for="Subject">Subject</label>
+        <input type="text" class="form-control" asp-for="Subject" required maxlength="200">
+    </div>
+    <div class="form-group">
+        <label for="Message">Message</label>
+        <textarea class="form-control" rows="6" asp-for="Message" required></textarea>
+    </div>
+    <div class="form-group">
+        <div class="g-recaptcha" data-sitekey="6LfClBYUAAAAAG_GVgQ1DiqEw0G4Ce78YSLFuoGW"></div>
+    </div>
+    <input type="submit" class="btn btn-default"/>
+</form>
+
+@section headerscripts{<script src='https://www.google.com/recaptcha/api.js'></script>}
+@section scripts{
+    <script>
+        $(document).ready(function () {
+            $("form").submit(function (e) {
+                
+                var recaptcha = $("#g-recaptcha-response").val();
+                if (recaptcha === "") {
+                    alert("Please check the recaptcha");
+                } else {
+                    $.ajax({
+                        async:false,
+                        url: "/api/captcha/verify",
+                        method: "POST",
+                        data: { "captchaResponse" : recaptcha },
+                        success: function (response) {
+                            if (response.success === true) {
+                                alert("captcha verification was successful\n" + JSON.stringify(response));
+                            } else {
+                                alert("captcha verification NOT successful \n" + JSON.stringify(response));
+                                e.preventDefault();
+                            }
+                        },
+                        error: function (jqXHR, textStatus, errorThrown) {
+                            alert("captcha verification NOT successful");
+                            e.preventDefault();
+                        }
+                    });
+                }                
+            });
+        });
+    </script>
+}

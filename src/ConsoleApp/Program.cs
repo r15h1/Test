@@ -9,10 +9,23 @@ namespace ConsoleApp
     {
         public static void Main(string[] args)
         {
-            Console.WriteLine("hello world");
-            Console.WriteLine("bye world");
-            Console.WriteLine("1.0.2");
-            Console.WriteLine("1.0.2.1");
+            I i = new MyClass();
+            MyClass m = new MyClass();
+
+            CallInterface(i);
+            CallInterface(m);
+            CallMyClass(i as MyClass);
+            CallMyClass(m);
+        }
+
+        public static void CallInterface(I i)
+        {
+            i.DoSomething();
+        }
+
+        public static void CallMyClass(MyClass m)
+        {
+            m.DoSomething();
         }
     }
 }
